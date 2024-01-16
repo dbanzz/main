@@ -18,3 +18,13 @@ EVPD_sampled['Model Year'] = EVPD_sampled['Model Year'].astype(str)
 
 #Since we need to draw the types of electric vehicles that change according to the year, we need to classify the data.
 EVPD_count = EVPD_sampled.groupby(['Model Year', 'Electric Vehicle Type']).size().unstack()
+
+#Draw a line chart comparing changes in electric vehicle types according to year
+plt.figure(figsize=(15, 8))
+sns.lineplot(data=EVPD_count, marker='o')
+plt.title('Electric Vehicle Type Trends by Model Year ')
+plt.xlabel('Model Year')
+plt.ylabel('Number of Vehicles')
+plt.grid(True)
+plt.legend(title='Electric Vehicle Type', loc='upper left')
+plt.show()
