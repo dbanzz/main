@@ -71,3 +71,37 @@ plt.xlabel('Model')
 plt.ylabel('City')
 plt.tight_layout()
 plt.show()
+
+
+#Empirical Cumulative Distribution Function Chart
+#Calculate the number of data points through a function, sort the data as x, and calculate the data points to generate a cumulative proportion
+def ecdf(data):
+    n = len(data) 
+    x = np.sort(data)
+    y = np.arange(1, n+1) / n 
+    return x, y
+
+#Use the defined ecdf function to calculate the model year sorted data and corresponding proportions
+xmy, ymy = ecdf(EVPD_sampled['Model Year'])
+
+#Use the defined ecdf function to calculate the electric vehicle mileage data and the corresponding ratio
+xer, yer = ecdf(EVPD_sampled['Electric Range'])
+
+#Set figure size
+plt.figure(figsize=(14, 6))
+
+#Set the first cumulative distribution chart on the left, using model year data and corresponding proportion data.
+plt.subplot(1, 2, 1)
+plt.plot(xmy, ymy, marker='.', linestyle='none')
+plt.xlabel('Model Year')
+plt.ylabel('ECDF')
+plt.title('ECDF of Model Year')
+
+#Set the first cumulative distribution chart on the Right, using electric vehicle mileage data and corresponding proportion data.
+plt.subplot(1, 2, 2)
+plt.plot(xer, yer, marker='.', linestyle='none', color='orange')
+plt.xlabel('Electric Range')
+plt.ylabel('ECDF')
+plt.title('ECDF of Electric Range')
+plt.tight_layout()
+plt.show()
