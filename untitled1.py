@@ -105,3 +105,24 @@ plt.ylabel('ECDF')
 plt.title('ECDF of Electric Range')
 plt.tight_layout()
 plt.show()
+
+#Violin Chart
+#Change the data type of Model Year back. It was originally changed to string type for the convenience of drawing.
+EVPD_sampled['Model Year'] = EVPD_sampled['Model Year'].astype(int)
+
+#Remove all unknown values in the Clean Alternative Fuel Vehicle (CAFV) Eligibility column
+f_data = EVPD_sampled[EVPD_sampled['Clean Alternative Fuel Vehicle (CAFV) Eligibility'] != 'Eligibility unknown as battery range has not been researched']
+
+#Set figure size
+plt.figure(figsize=(15, 8))
+
+#Draw a violin plot using the cleaned data
+sns.violinplot(x='Clean Alternative Fuel Vehicle (CAFV) Eligibility', y='Model Year', data=f_data)
+
+#Plotting
+plt.title('Distribution of Vehicle Model Years by CAFV Eligibility')
+plt.xlabel('CAFV Eligibility')
+#Turn Y sticks' Value to int type
+plt.yticks(range(EVPD_sampled['Model Year'].min(), EVPD_sampled['Model Year'].max() + 1))
+plt.ylabel('Model Year')
+plt.show()
