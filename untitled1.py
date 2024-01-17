@@ -13,6 +13,8 @@ afd_EVPD=EVPD.drop(columns=EVPD_drop)
 sample_size = 1000
 EVPD_sampled = afd_EVPD.sample(n=sample_size, random_state=1)
 
+
+#Line Chart
 #Convert year to string type for subsequent operations
 EVPD_sampled['Model Year'] = EVPD_sampled['Model Year'].astype(str)
 
@@ -30,6 +32,7 @@ plt.legend(title='Electric Vehicle Type', loc='upper left')
 plt.show()
 
 
+#Bar Chart
 #Group the data and then count the quantity, then install the year grouping to select the top ten manufacturers of each year, and finally reshape the data, with year as the row and manufacturer as the column.
 tmpy = EVPD_sampled.groupby(['Model Year', 'Make']).size().groupby(level=0, group_keys=False).nlargest(10).unstack()
 
@@ -50,4 +53,21 @@ ax1.legend(loc='upper left')
 #Show bar chart
 plt.xticks(rotation=0)
 plt.grid(True)
+plt.show()
+
+
+#Heatmap
+#Calculate the top ten cities and car models, and then calculate the data that meets these two conditions at the same time, and then calculate the specific values.
+tc = EVPD_sampled['City'].value_counts().head(10).index
+tm = EVPD_sampled['Model'].value_counts().head(10).index
+tcm = EVPD_sampled[EVPD_sampled['City'].isin(tc) & EVPD_sampled['Model'].isin(tm)]
+dtcm = tcm.groupby(['City', 'Model']).size().unstack().fillna(0)
+
+#Set figure size, draw a heat map, and display values without decimal points on the heat map
+plt.figure(figsize=(15, 8))
+sns.heatmap(dtcm, annot=True, fmt=".0f", cmap='viridis')
+plt.title('Top 10 Vehicle Models in Top 10 Cities (Heatmap)')
+plt.xlabel('Model')
+plt.ylabel('City')
+plt.tight_layout()
 plt.show()
