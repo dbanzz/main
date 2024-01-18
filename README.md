@@ -1,9 +1,9 @@
-#Electric Vehicle Demographic Data Analysis
+# Electric Vehicle Demographic Data Analysis
 
-##Overview
+## Overview
 This project uses Python to analyze and visualize electric vehicle registration data from the U.S. state of Washington. The analyzed dataset contains various attributes of electric vehicles, such as make, model, electric driving range, etc.
 
-##Data set
+## Data set
 The dataset contains the following main fields:
 
 **VIN (1-10)**: The first 10 digits of the vehicle identification number, a unique code used to identify the vehicle.
@@ -24,7 +24,7 @@ Vehicle location: The geographical location coordinates (latitude and longitude)
 Electric power company: The electric power company in the power supply area.
 2020 Census Tract: 2020 Census Tract Number from Vehicle Registry
 
-##The main function
+## The main function
 **Data preprocessing**: Determine the year data range and divide the appropriate range to facilitate subsequent visualization.
 **Year data conversion**: Convert the Model Year field from numbers to string types to facilitate subsequent operations.
 **Data grouping and visualization**: Group the data by year and electric vehicle type, and draw a line chart to compare changes in electric vehicle types in different years.
@@ -34,10 +34,10 @@ Electric power company: The electric power company in the power supply area.
 **Violin Plot**: Use a violin plot to analyze the distributional relationship between vehicle model year and CAFV (Clean Alternative Fuel Vehicle) eligibility.
 **Electric vehicle range analysis**: Analyze the electric range of battery electric vehicles (BEV) and plug-in hybrid electric vehicles (PHEV) and generate box plots.
 
-##Instructions for use
+## Instructions for use
 To run this script, the following Python libraries need to be installed:
 **Pandas**
 **matplotlib**
 **seaborn**
 **numpy**
-##Before running the program, make sure that the data files are located in the specified path.
+## Before running the program, make sure that the data files are located in the specified path.
