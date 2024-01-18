@@ -5,14 +5,9 @@ import numpy as np
 
 #Retrieve data from the file and perform operations
 EVPD = pd.read_csv('D:/Programming Assessment2/Electric_Vehicle_Population_Data.csv')
-#Remove some data that is not relevant to the analysis
-EVPD_drop = ['VIN (1-10)', 'DOL Vehicle ID', '2020 Census Tract', 'Vehicle Location','Postal Code', 'Base MSRP', 'Legislative District', 'Electric Utility','State']
-afd_EVPD=EVPD.drop(columns=EVPD_drop)
 
-#Because the amount of data is too large to facilitate analysis, a random sampling method was used to extract 1,000 pieces of data for further analysis.
-sample_size = 1000
-EVPD_sampled = afd_EVPD.sample(n=sample_size, random_state=1)
-
+#Manipulate the data to obtain data after 2010
+EVPD_sampled = EVPD[EVPD['Model Year']>2010]
 
 #Line Chart
 #Convert year to string type for subsequent operations
