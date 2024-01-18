@@ -121,3 +121,26 @@ plt.xlabel('CAFV Eligibility')
 plt.yticks(range(EVPD_sampled['Model Year'].min(), EVPD_sampled['Model Year'].max() + 1))
 plt.ylabel('Model Year')
 plt.show()
+
+#boxplot
+#Extract different Electric Vehicle Type electric ranges
+br = EVPD_sampled[EVPD_sampled['Electric Vehicle Type'] == 'Battery Electric Vehicle (BEV)']['Electric Range']
+pr = EVPD_sampled[EVPD_sampled['Electric Vehicle Type'] == 'Plug-in Hybrid Electric Vehicle (PHEV)']['Electric Range']
+
+#Preparing data for boxplot
+EV_types = ['BEV', 'PHEV']
+rd = pd.DataFrame({
+    'EV Type': ['BEV'] * len(br) + ['PHEV'] * len(pr),
+    'Range (miles)': pd.concat([br, pr], ignore_index=True)
+})
+
+#Set figure size
+plt.figure(figsize=(10, 6))
+
+#Using prepared data to create boxplot
+sns.boxplot(x='EV Type', y='Range (miles)', data=rd)
+plt.title('Electric Vehicle Range Analysis')
+plt.xticks([0, 1], ['BEV (Battery Electric Vehicle)', 'PHEV (Plug-in Hybrid Electric Vehicle)'])
+plt.xlabel('EV Type')
+plt.ylabel('Range (miles)')
+plt.show()
