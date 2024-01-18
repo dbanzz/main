@@ -1,4 +1,4 @@
-# Electric Vehicle Demographic Data Analysis
+# Electric Vehicle Population Data Analysis
 
 ## Overview
 This project uses Python to analyze and visualize electric vehicle registration data from the U.S. state of Washington. The analyzed dataset contains various attributes of electric vehicles, such as make, model, electric driving range, etc.
