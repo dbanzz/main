@@ -59,8 +59,13 @@ Electric power company: The electric power company in the power supply area.
 
 ## Instructions for use
 To run this script, the following Python libraries need to be installed:
+<br>
 **Pandas**
+<br>
 **matplotlib**
+<br>
 **seaborn**
+<br>
 **numpy**
+<br>
 ## Before running the program, make sure that the data files are located in the specified path.
