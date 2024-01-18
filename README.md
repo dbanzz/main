@@ -7,37 +7,37 @@ This project uses Python to analyze and visualize electric vehicle registration 
 The dataset contains the following main fields:
 
 **VIN (1-10)**: The first 10 digits of the vehicle identification number, a unique code used to identify the vehicle.
-/n
+<br>
 **County**: The county in which the vehicle was registered.
-/n
+<br>
 **City**: The city where the vehicle is registered.
-/n
+<br>
 **State**: The state in which the vehicle is registered.
-/n
+<br>
 Postal Code: The postal code in which the vehicle is registered.
-/n
+<br>
 **Model Year**: The year the vehicle was produced.
-/n
+<br>
 **Make**: The manufacturer (brand) of the vehicle.
-/n
+<br>
 **Model**: The model of the vehicle.
-/n
+<br>
 **EV Type**: The type of electric vehicle, such as a battery electric vehicle (BEV) or a plug-in hybrid electric vehicle (PHEV).
-/n
+<br>
 **Clean Alternative Fuel Vehicle (CAFV) Eligibility**: Whether the vehicle qualifies as a Clean Alternative Fuel Vehicle.
-/n
+<br>
 **Electric range**: The vehicle’s electric range.
-/n
+<br>
 Base MSRP: The vehicle’s base Manufacturer’s Suggested Retail Price.
-/n
+<br>
 Legislative District: The legislative district in which the vehicle is registered.
-/n
+<br>
 DOL Vehicle ID: The vehicle's Division of Licensing (DOL) ID number.
-/n
+<br>
 Vehicle location: The geographical location coordinates (latitude and longitude) of the vehicle.
-/n
+<br>
 Electric power company: The electric power company in the power supply area.
-/n
+<br>
 2020 Census Tract: 2020 Census Tract Number from Vehicle Registry
 
 ## The main function
