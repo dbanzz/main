@@ -42,12 +42,19 @@ Electric power company: The electric power company in the power supply area.
 
 ## The main function
 **Data preprocessing**: Determine the year data range and divide the appropriate range to facilitate subsequent visualization.
+<br>
 **Year data conversion**: Convert the Model Year field from numbers to string types to facilitate subsequent operations.
+<br>
 **Data grouping and visualization**: Group the data by year and electric vehicle type, and draw a line chart to compare changes in electric vehicle types in different years.
+<br>
 **Market share analysis**: Calculate the market share of the top 10 brands each year and draw a stacked column chart.
+<br>
 **Heatmaps**: Draw heatmaps to analyze relationships and patterns between different variables.
+<br>
 **Empirical cumulative distribution function (ECDF)**: Perform ECDF analysis on model years and battery ranges and draw corresponding charts.
+<br>
 **Violin Plot**: Use a violin plot to analyze the distributional relationship between vehicle model year and CAFV (Clean Alternative Fuel Vehicle) eligibility.
+<br>
 **Electric vehicle range analysis**: Analyze the electric range of battery electric vehicles (BEV) and plug-in hybrid electric vehicles (PHEV) and generate box plots.
 
 ## Instructions for use
